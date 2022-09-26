@@ -1,13 +1,11 @@
 package com.parasoft.parabank;
 
 import com.parasoft.parabank.Page.AccountPage;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Tag("SmokeTest")
 public class RegisterPageTest {
 
     private static AccountPage accountPage;

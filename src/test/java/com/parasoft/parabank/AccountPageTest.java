@@ -5,6 +5,7 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Tag("RegressionTests")
 public class AccountPageTest {
 
     private static AccountPage accountPage;
