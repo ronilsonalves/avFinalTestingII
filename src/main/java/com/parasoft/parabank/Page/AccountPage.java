@@ -4,9 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.logging.Logger;
+
 public class AccountPage extends RegisterPage {
     protected static final String openNewAccountLinkHref = "//*[@id=\"leftPanel\"]/ul/li[1]/a"; // XPath
     protected static final String selectFieldTypeAccount = "//*[@id=\"type\"]"; // XPath
+    protected static final String selectFieldFromAccountId = "//*[@id=\"fromAccountId\"]"; // XPath
     protected static final String openNewAccountBtn = "//*[@id=\"rightPanel\"]/div/div/form/div/input"; // XPath
     protected static final String txtOpenNewAccountResult = "//*[@id=\"rightPanel\"]/div/div/p[1]"; // XPath
     protected static final String accountsOverviewLinkHref = "//*[@id=\"leftPanel\"]/ul/li[2]/a"; // XPath
@@ -31,6 +34,8 @@ public class AccountPage extends RegisterPage {
     public void performActionOpenNewAccount() {
         Select selectTypeEl = new Select(getWebElement(By.xpath(selectFieldTypeAccount)));
         selectTypeEl.selectByIndex(1);
+        Select selectFromAccountIdEl = new Select(getWebElement(By.xpath(selectFieldFromAccountId)));
+        selectFromAccountIdEl.selectByIndex(0);
         WebElement openAccountBtnEl = getWebElement(By.xpath(openNewAccountBtn));
         openAccountBtnEl.click();
     }

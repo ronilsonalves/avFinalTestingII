@@ -1,17 +1,23 @@
-package com.parasoft.parabank;
+package com.parasoft.parabank.front;
 
 import com.parasoft.parabank.Page.AccountPage;
 import org.junit.jupiter.api.*;
+
+import java.util.logging.Logger;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Tag("RegressionTests")
 public class AccountPageTest {
 
+    private static Logger LOGGER = Logger.getLogger(AccountPageTest.class.getName());
+
     private static AccountPage accountPage;
 
     @BeforeEach
     public void setUp() throws InterruptedException {
+        LOGGER.info("Starting test...");
+        LOGGER.warning("We are running this tests using the user generated in the RegisterPageTest");
         accountPage = new AccountPage() ;
         accountPage.openApp();
         accountPage.insertLoginDataFields("andremendes", "andremendes123");
@@ -26,6 +32,7 @@ public class AccountPageTest {
         accountPage.performActionOpenNewAccount();
         Thread.sleep(2000);
         assertTrue(accountPage.getTxtOpenNewAccountResult().contains("Congratulations, your account is now open."));
+        LOGGER.info(accountPage.getTxtOpenNewAccountResult());
     }
 
     @Test

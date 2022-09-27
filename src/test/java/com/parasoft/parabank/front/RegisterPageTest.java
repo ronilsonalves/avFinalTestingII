@@ -1,4 +1,4 @@
-package com.parasoft.parabank;
+package com.parasoft.parabank.front;
 
 import com.parasoft.parabank.Page.AccountPage;
 import org.junit.jupiter.api.*;
