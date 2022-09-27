@@ -6,7 +6,7 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Tag("SmokeTest")
-public class RegisterPageTest {
+public class A01RegisterPageTest {
 
     private static AccountPage accountPage;
 

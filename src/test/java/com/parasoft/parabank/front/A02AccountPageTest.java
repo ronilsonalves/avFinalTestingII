@@ -8,9 +8,9 @@ import java.util.logging.Logger;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Tag("RegressionTests")
-public class AccountPageTest {
+public class A02AccountPageTest {
 
-    private static Logger LOGGER = Logger.getLogger(AccountPageTest.class.getName());
+    private static Logger LOGGER = Logger.getLogger(A02AccountPageTest.class.getName());
 
     private static AccountPage accountPage;
 
@@ -26,7 +26,7 @@ public class AccountPageTest {
     }
 
     @Test
-    @DisplayName("Add Account Test")
+    @DisplayName("C1_Add Account Test")
     public void testAddAccount() throws InterruptedException {
         accountPage.clickOnOpenNewAccountLink();
         accountPage.performActionOpenNewAccount();
@@ -36,7 +36,7 @@ public class AccountPageTest {
     }
 
     @Test
-    @DisplayName("Accounts Overview Test")
+    @DisplayName("C2_Accounts Overview Test")
     public void testAccountsOverview() throws InterruptedException {
         Thread.sleep(2000);
         accountPage.clickOnAccountsOverview();
@@ -45,7 +45,7 @@ public class AccountPageTest {
     }
 
     @Test
-    @DisplayName("Transfer Funds Test")
+    @DisplayName("C3_Transfer Funds Test")
     public void testTransferFunds() throws InterruptedException {
         Thread.sleep(2000);
         accountPage.clickOnTransferFundsLink();
@@ -58,7 +58,7 @@ public class AccountPageTest {
     }
 
     @Test
-    @DisplayName("Account's Activities Test")
+    @DisplayName("C4_Account's Activities Test")
     public void testAccountsActivitiesTest() throws InterruptedException {
         Thread.sleep(2000);
         accountPage.clickOnAccountsOverview();

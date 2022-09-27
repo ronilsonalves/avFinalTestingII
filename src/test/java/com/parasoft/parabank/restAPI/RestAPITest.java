@@ -6,12 +6,12 @@ import java.util.logging.Logger;
 import static io.restassured.RestAssured.*;
 
 @Tag("IntegrationTests")
-public class APIRestTest {
-    private static final Logger LOGGER = Logger.getLogger(APIRestTest.class.getName());
+public class RestAPITest {
+    private static final Logger LOGGER = Logger.getLogger(RestAPITest.class.getName());
     // Para obter o JSESSIONID, é necessário realizar o login no site do ParaBank, e obter o valor do cookie.
     // Então, basta substituir o valor abaixo pelo valor do cookie. O Cookie abaixo é do usuario criado no teste
     // automatizado com o Selenium. RegisterPageTest.java
-    private static final String JSESSIONID = "JSESSIONID=1B40E9B63D76B0F54FCB17E14268A496";
+    private static final String JSESSIONID = "JSESSIONID=8977F827D751431792BE8FA2A0A71D56";
 
     // Ao usar as URLs da aplicação front-end será necessário que o usuário esteja logado para que o teste funcione.
     // Para isso, utilize o JSESSIONID gerado após o login no site.
@@ -30,7 +30,7 @@ public class APIRestTest {
     }
 
     @Test
-    @DisplayName("Register Account Status Code Test")
+    @DisplayName("C1_Register Account Status Code Test")
     public void givenThatIPerformAGetRequest_whenIGetTheResponseCode_theTheResponseStatusCodeIs200() throws Exception {
         given()
                 .when()
@@ -40,7 +40,7 @@ public class APIRestTest {
     }
 
     @Test
-    @DisplayName("Open New Account Test")
+    @DisplayName("C2_Open New Account Test")
     public void givenThatIPerformAPostRequest_whenIGetTheResponseCode_theTheResponseStatusCodeIs200() throws Exception {
         LOGGER.info("Openning a new account...");
         given()
@@ -54,7 +54,7 @@ public class APIRestTest {
     }
 
     @Test
-    @DisplayName("Accounts Overview Test")
+    @DisplayName("C3_Accounts Overview Test")
     public void givenThatIPerformAGetRequestToAccountOverview_whenIGetTheResponseCode_theTheResponseStatusCodeIs200() throws Exception {
         LOGGER.info("Getting the accounts overview...");
         given().
@@ -67,7 +67,7 @@ public class APIRestTest {
     }
 
     @Test
-    @DisplayName("Transfer Funds Test")
+    @DisplayName("C4_Transfer Funds Test")
     public void givenThatIPerformAPostRequestToTransferFunds_whenIGetTheResponseCode_theTheResponseStatusCodeIs200() throws Exception {
         LOGGER.info("Transfering funds...");
         given()
@@ -80,7 +80,7 @@ public class APIRestTest {
     }
 
     @Test
-    @DisplayName("Account`s Activities Test")
+    @DisplayName("C5_Account`s Activities Test")
     public void givenThatIPerformAGetRequestToAccountActivities_whenIGetTheResponseCode_theTheResponseStatusCodeIs200() throws Exception {
         LOGGER.info("Getting the account`s activities...");
         given()
